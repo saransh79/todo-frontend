@@ -1,6 +1,7 @@
 # MERN Todo List App
 
 This is a simple MERN stack todo list app with CRUD operations using MongoDB. The app is fully responsive with a beautiful user interface.
+The backend repository for this app can be found at https://github.com/saransh79/todo-backend and the deployed version can be found at https://mern-todolist-app.netlify.app.
 
 ## Table of Contents
 
