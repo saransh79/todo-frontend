@@ -5,12 +5,9 @@ const Navbar = () => {
     const name = localStorage.getItem('name')
     const handleLogout = (e) => {
         e.preventDefault();
-        if (name) {
-            location('/');
-            localStorage.removeItem('name')
-            localStorage.removeItem('email')
-        }
-        else location('/login')
+        localStorage.removeItem('name')
+        localStorage.removeItem('email')
+        location('/login');
     }
 
     return (
