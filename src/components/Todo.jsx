@@ -13,7 +13,7 @@ const Todo = ({ todo }) => {
     const dispatch = useDispatch();
 
     const onFormSubmit = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         setEditing(prevState => !prevState);
 
@@ -23,18 +23,16 @@ const Todo = ({ todo }) => {
     return (
         <div
             className="task"
-            onClick={() => dispatch(toggleTodo(todo._id))}
             style={{
                 textDecoration: todo?.done ? 'line-through' : '',
                 color: todo?.done ? '#bdc3c7' : '#34495e'
             }}
             data-testid="todo-test"
         >
-            <span style={{ display: editing ? 'none' : '' }}>{todo?.data}</span>
+            <span style={{ display: editing ? 'none' : '', }} onClick={() => dispatch(toggleTodo(todo._id))}>{todo?.data} </span>
 
             <form
                 style={{ display: editing ? 'inline' : 'none' }}
-                onSubmit={onFormSubmit}
             >
                 <input
                     type="text"
@@ -42,14 +40,19 @@ const Todo = ({ todo }) => {
                     className="edit-todo"
                     onChange={(e) => setText(e.target.value)}
                 />
+                <span className="icon" onClick={() => onFormSubmit()}>
+                    <i className="fas fa-plus" />
+                </span>
             </form>
+            {!editing && <span>
+                <span className="icon" onClick={() => dispatch(deleteTodo(todo._id))}>
+                    <i className="fas fa-trash" />
+                </span>
+                <span className="icon" onClick={() => setEditing(prevState => !prevState)}>
+                    <i className="fas fa-pen" />
+                </span>
+            </span>}
 
-            <span className="icon" onClick={() => dispatch(deleteTodo(todo._id))}>
-                <i className="fas fa-trash" />
-            </span>
-            <span className="icon" onClick={() => setEditing(prevState => !prevState)}>
-                <i className="fas fa-pen" />
-            </span>
         </div>
     )
 }
