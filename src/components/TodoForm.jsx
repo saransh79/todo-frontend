@@ -12,7 +12,7 @@ const TodoForm = () => {
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-
+        if(!localStorage.getItem('name')) alert("Please Login First!");
         dispatch(addNewTodo(text));
 
         setText('');
