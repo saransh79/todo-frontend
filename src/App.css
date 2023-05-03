@@ -1,4 +1,4 @@
-section{
+section {
   width: 70%;
   margin: 0 auto;
 }
@@ -24,7 +24,7 @@ input {
   border-radius: 10px;
 }
 
-ul{
+ul {
   padding-inline-start: 0;
 }
 .task {
@@ -37,7 +37,7 @@ ul{
 }
 
 .task span {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .icon {
@@ -52,10 +52,10 @@ article {
 .edit-todo {
   width: 85%;
   font-size: 16px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #ffffff;
 }
 
 .button {
@@ -71,27 +71,31 @@ article {
 }
 
 .button.selected {
-  color: #FFF;
+  color: #fff;
   background-color: #6c6777;
 }
-
+.button.selected:hover {
+  color: #fff;
+  background-color: #0e0a0a;
+  border: 1px solid #6c6777;
+}
 .button.clear {
   float: right;
-  color: #FFF;
+  color: #fff;
   background-color: #ee1630;
   width: 170px;
   margin-right: 0;
 }
-.remove-done-todos{
+.remove-done-todos {
   color: #ee1630;
   float: right;
 }
-.form input{
+.form input {
   width: 40%;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.form button{
+.form button {
   font-size: 20px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -101,9 +105,34 @@ article {
   background-color: #34495e;
   color: #fff;
 }
-
-@media screen and (max-width: 600px){
-  section{
+.auth-header {
+  width: 40%;
+  margin: 4rem auto;
+  border: 2px solid #2c3e50;
+  border-radius: 2rem;
+}
+.auth-para {
+  color: #1636ee;
+  cursor: pointer;
+}
+.auth-para:hover{
+  color: #7586ea;
+}
+.auth-form input {
+  margin: 1rem;
+  width: 80%;
+}
+.auth-header h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+@media screen and (max-width: 600px) {
+  section {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .auth-header {
     width: 90%;
   }
 }

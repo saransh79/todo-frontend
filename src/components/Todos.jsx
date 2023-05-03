@@ -20,7 +20,8 @@ export const Todos = () => {
 
     useEffect(() => {
         dispatch(getAllTodos());
-    },)
+        // eslint-disable-next-line
+    },[])
 
     const getTodos = () => {
         if (currentTab === ALL_TODOS) {

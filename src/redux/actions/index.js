@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 import { ADDNEW_TODO, GETALL_TODO, TOGGLE_TODO, UPDATE_TODO, DELETE_TODO, TOGGLE_TAB } from './type';
-
-const API_URL = 'https://todo-app-n82h.onrender.com';
+import { API_URL } from '../../components/api';
 
 export const addNewTodo = (data) => async (dispatch) => {
     try {
-        const res = await axios.post(`${API_URL}/todos`, { data });
+        const email= localStorage.getItem('email')
+        const res = await axios.post(`${API_URL}/todos`, { data , email});
 
         dispatch({ type: ADDNEW_TODO , payload: res.data });
     } catch (error) {
@@ -16,7 +16,8 @@ export const addNewTodo = (data) => async (dispatch) => {
 
 export const getAllTodos = () => async (dispatch) => {
     try {
-        const res = await axios.get(`${API_URL}/todos`);
+        const email= localStorage.getItem('email')
+        const res = await axios.post(`${API_URL}/alltodos`, {email});
 
         dispatch({ type: GETALL_TODO , payload: res.data });
     } catch (error) {
